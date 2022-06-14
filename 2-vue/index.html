@@ -8,16 +8,23 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+<!--   뷰가 통제권을 갖을 영역 -->
+<!--
+v-modal: 양방향 바인딩이 됨
+-->
   <div id="app">
     <header>
       <h2 class="container">검색</h2>
     </header>
 
     <div class="container">
-      {{msg}}
+      <form v-on:submit.prevent="onSubmit">
+        <input @keyup="onKeyup" type="text" v-modal="query" placeholder="검색어를 입력하세요" autofocus>
+        <button @:click="onReset" v-show="query.length" type="reset" class="btn-reset"></button>
+      </form>
     </div>
   </div>
-  <script src="https://unpkg.com/vue"></script>
-  <script type="module" src="./js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+<script type="module" src="./js/app.js"></script>
 </body>
 </html>
