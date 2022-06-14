@@ -5,7 +5,13 @@ new Vue({
   data: {
     query: '',
     submitted: false,
-    searchResult: []
+    searchResult: [],
+    tabs:['추천 검색어', '최근 검색어']
+  },
+
+  //created => 뷰 인스턴스가 생성될때 실행되는 함수
+  created(){
+    this.selectedTab = this.tabs[0]
   },
   methods: {
     onSubmit(e) {
