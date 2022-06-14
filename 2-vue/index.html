@@ -33,10 +33,16 @@
       </div>
        <div v-else>
          <ul c]ass="tabs">
-           <li v-for="tab in tabs" :class="{active: tab === selectedTab">
+           <li v-for="tab in tabs" :class="{active: tab === selectedTab" :click="onClickTab(tab)">
              {{tab}}
            </li>
          </ul>
+          <div v-if='selectdTab === tabs[0]'>
+             추천검색어 목록
+          </div>
+          <div v-else>
+            최근 검색어 목록
+          </div>
        </div>
       
 

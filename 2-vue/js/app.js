@@ -6,6 +6,7 @@ new Vue({
     query: '',
     submitted: false,
     searchResult: [],
+    selectedTab :'',
     tabs:['추천 검색어', '최근 검색어']
   },
 
@@ -16,6 +17,9 @@ new Vue({
   methods: {
     onSubmit(e) {
       this.search()
+    },
+    onClickTab(tab) {
+      this.selectedTab = tab
     },
     onKeyup(e) {
       if (!this.query.length) this.resetForm()
